@@ -1,6 +1,8 @@
 spring:
   application:
     name: wllserver
+  server:
+    port: 8081
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
