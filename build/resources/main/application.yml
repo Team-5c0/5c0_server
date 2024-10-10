@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: wllserver
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://43.201.132.136:3306/wllserver
+    username: root
+    password: dltkddmsqudtls
+
+  jpa:
+    hibernate:
+      ddl-auto: update
