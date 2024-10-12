@@ -19,6 +19,7 @@ jobs:
           host: ${{ secrets.HOST }} 
           username: ${{ secrets.USER }} 
           script: |
+            set -e
             PID=$(lsof -t -i:8081)
             if [ -z "$PID" ]; then
               echo "No process is running on port 8081"
