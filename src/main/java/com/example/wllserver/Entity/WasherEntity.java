@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 public class WasherEntity {
 
     @Id
-    private Long id;
+    private Long washerid;
 
     @Enumerated(EnumType.STRING)
     private WasherType washerType; // 세탁기인지 건조기인지

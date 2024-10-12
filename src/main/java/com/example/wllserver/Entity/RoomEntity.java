@@ -21,7 +21,7 @@ import java.util.List;
 public class RoomEntity {
 
     @Id
-    private String id;
+    private String roomid;
 
     private int floor;
 

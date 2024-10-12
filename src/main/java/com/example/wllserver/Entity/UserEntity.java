@@ -18,7 +18,7 @@ import lombok.experimental.SuperBuilder;
 public class UserEntity {
 
     @Id
-    private Long id;
+    private Long userid;
 
     private String username;
 
