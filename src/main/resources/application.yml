@@ -10,7 +10,10 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
 
 server:
   port: 8081
+
+jwt:
+  secret: aosidfhioahsdokjtlqopsdotqljdlkfhqothoasodhotqnokewmsdohtqoinasdhoifhotlqsdhaoithqokjdsklfj
