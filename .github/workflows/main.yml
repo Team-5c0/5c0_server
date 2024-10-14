@@ -28,6 +28,7 @@ jobs:
               kill -9 $PID
             fi
             cd 5c0_server
+            git clean -fd
             git reset --hard
             git pull
             sh gradlew build
