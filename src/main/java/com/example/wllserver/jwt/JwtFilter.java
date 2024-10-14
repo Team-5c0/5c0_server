@@ -23,7 +23,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
     private final List<String> permitAllPaths = Arrays.asList(
             "/register", "/login", "/swagger-ui/**", "/v3/api-docs/**",
-            "/test/permitAll"
+            "/test/permitAll", "/wash/**"
     );
 
     private boolean isAuthenticatedPath(String path) {

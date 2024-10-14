@@ -29,8 +29,9 @@ public class SecurityConfig {
                 .logout(AbstractHttpConfigurer::disable)
 
                 .authorizeHttpRequests((auth) -> auth
-                        .requestMatchers("/test/permitAll", "/main", "/register", "/login").permitAll()
+                        .requestMatchers("/test/permitAll", "/main", "/register", "/login", "/wash/**").permitAll()
                         .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                        .requestMatchers("/test/authenticated").authenticated()
                         .requestMatchers("/test/admin","/admin").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .sessionManagement((session) -> session

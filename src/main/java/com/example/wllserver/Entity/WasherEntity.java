@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 @Entity
@@ -35,6 +35,8 @@ public class WasherEntity {
     @JoinColumn(name = "room_id")
     private RoomEntity roomEntity;
 
-
+    public long getRemainingTime() {
+        return endTime != null ? Duration.between(LocalDateTime.now(), endTime).toMinutes() : 0;
+    }
 
 }

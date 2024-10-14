@@ -21,11 +21,9 @@ import java.util.List;
 public class RoomEntity {
 
     @Id
-    private String roomid;
-
-    private int floor;
+    private Long roomid;
 
     @OneToMany(mappedBy = "roomEntity")
-    private List<WasherEntity> washingMachines;
+    private List<WasherEntity> washers;
 
 }
