@@ -3,6 +3,7 @@ package com.example.wllserver.controller;
 import com.example.wllserver.Entity.WasherEntity;
 import com.example.wllserver.dto.RoomResponse;
 import com.example.wllserver.service.WashService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,11 +20,13 @@ public class WashController {
     @Autowired
     private WashService washService;
 
+    @Operation(summary = "세탁실 조회", description = "Returns a list of example data")
     @GetMapping("/rooms")
     public List<RoomResponse> getAllRooms() {
         return washService.getAllRooms();
     }
 
+    @Operation(summary = "세탁기 조회", description = "roomid를 입력하면 해당 세탁실에 있는 세탁기들을 조회")
     @GetMapping("/washers")
     public List<Map<String, Object>> getWashersByRoom(@RequestParam Long roomId) {
         List<WasherEntity> washers = washService.getWashersByRoom(roomId);
@@ -42,6 +45,7 @@ public class WashController {
         }).collect(Collectors.toList());
     }
 
+    @Operation(summary = "세탁기 사용", description = "남은시간은 분단위로 입력 (예: 1시간 30분이면 90입력)")
     @PostMapping("/usewasher")
     public ResponseEntity<?> startWashing(@RequestParam Long washerId,
                                           @RequestParam Long userId,
