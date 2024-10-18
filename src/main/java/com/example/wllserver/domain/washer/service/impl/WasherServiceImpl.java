@@ -1,4 +1,4 @@
-package com.example.wllserver.domain.washer.service;
+package com.example.wllserver.domain.washer.service.impl;
 
 import com.example.wllserver.domain.washer.domain.entity.RoomEntity;
 import com.example.wllserver.domain.user.domain.entity.UserEntity;
@@ -7,9 +7,9 @@ import com.example.wllserver.domain.washer.dto.response.RoomResponse;
 import com.example.wllserver.domain.washer.repository.RoomRepository;
 import com.example.wllserver.domain.user.repository.UserRepository;
 import com.example.wllserver.domain.washer.repository.WasherRepository;
+import com.example.wllserver.domain.washer.service.WasherService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

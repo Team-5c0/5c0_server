@@ -2,7 +2,7 @@ package com.example.wllserver.domain.washer.controller;
 
 import com.example.wllserver.domain.washer.domain.entity.WasherEntity;
 import com.example.wllserver.domain.washer.dto.response.RoomResponse;
-import com.example.wllserver.domain.washer.service.WasherServiceImpl;
+import com.example.wllserver.domain.washer.service.impl.WasherServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
