@@ -22,20 +22,22 @@ public class WasherEntity {
     @Id
     private Long washerid;
 
+    @ManyToOne
+    @JoinColumn(name = "room_id")
+    private RoomEntity roomEntity;
+
     @Enumerated(EnumType.STRING)
     private WasherType washerType; // 세탁기인지 건조기인지
 
     private boolean available; // 사용 가능한지 여부
+
+    private LocalDateTime startTime; // 시작 시간
 
     private LocalDateTime endTime; // 끝나는 시간
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserEntity user; // 사용하고 있는 사람
-
-    @ManyToOne
-    @JoinColumn(name = "room_id")
-    private RoomEntity roomEntity;
 
     public long getRemainingTime() {
         return endTime != null ? Duration.between(LocalDateTime.now(), endTime).toMinutes() : 0;

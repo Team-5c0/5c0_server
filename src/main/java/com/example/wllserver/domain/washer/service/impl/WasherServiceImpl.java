@@ -59,6 +59,7 @@ public class WasherServiceImpl implements WasherService {
                 .orElseThrow(() -> new IllegalArgumentException("사용자를 찾을 수 없습니다."));
 
         washer.setAvailable(false);
+        washer.setStartTime(LocalDateTime.now());
         washer.setEndTime(LocalDateTime.now().plusMinutes(washMinutes));
         washer.setUser(user);
 
@@ -77,6 +78,7 @@ public class WasherServiceImpl implements WasherService {
                 .orElseThrow(() -> new IllegalArgumentException("세탁기를 찾을 수 없습니다."));
 
         washer.setAvailable(true);
+        washer.setStartTime(null);
         washer.setEndTime(null);
         washer.setUser(null);
 

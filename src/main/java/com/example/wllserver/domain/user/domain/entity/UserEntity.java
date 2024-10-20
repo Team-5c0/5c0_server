@@ -1,8 +1,7 @@
 package com.example.wllserver.domain.user.domain.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.example.wllserver.domain.user.domain.enums.UserType;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,5 +20,8 @@ public class UserEntity {
     private Long userid;
 
     private String username;
+
+    @Enumerated(EnumType.STRING)
+    private UserType userType;
 
 }

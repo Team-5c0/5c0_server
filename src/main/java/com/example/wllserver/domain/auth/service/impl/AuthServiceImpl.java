@@ -2,6 +2,7 @@ package com.example.wllserver.domain.auth.service.impl;
 
 import com.example.wllserver.domain.auth.service.AuthService;
 import com.example.wllserver.domain.user.domain.entity.UserEntity;
+import com.example.wllserver.domain.user.domain.enums.UserType;
 import com.example.wllserver.global.exception.ErrorResponse;
 import com.example.wllserver.domain.auth.register.dto.response.LoginResponse;
 import com.example.wllserver.domain.auth.register.dto.request.RegisterRequest;
@@ -28,6 +29,7 @@ public class AuthServiceImpl implements AuthService {
         UserEntity userEntity = UserEntity.builder()
                 .userid(registerRequest.userid())
                 .username(registerRequest.username())
+                .userType(UserType.valueOf(registerRequest.usertype()))
                 .build();
 
         userRepository.save(userEntity);

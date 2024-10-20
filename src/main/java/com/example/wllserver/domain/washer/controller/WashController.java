@@ -37,7 +37,8 @@ public class WashController {
             washerInfo.put("available", washer.isAvailable());
 
             if (!washer.isAvailable()) {
-                washerInfo.put("remainingTime", washer.getRemainingTime());
+                washerInfo.put("startTime", washer.getStartTime());
+                washerInfo.put("endTime", washer.getEndTime());
                 washerInfo.put("user", washer.getUser().getUserid());
             }
 
